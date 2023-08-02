@@ -6,9 +6,7 @@ public class PowerCalculator {
         } else if (num2<0){
             throw new InvalidInputException("Некорректная степень!");
         } else {
-            double number1 = num1;
-            double number2 = num2;
-            result = Math.pow(number1, number2);
+            result = Math.pow((double) num1, (double) num2);
         }
         return result;
     }

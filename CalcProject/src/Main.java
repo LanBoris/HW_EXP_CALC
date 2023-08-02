@@ -24,7 +24,7 @@ public class Main {
                         break;
                     }
                     if (cmd.equals("/")) {
-                        double result = Calculator.divNumbers((double) number1, (double) number2);
+                        double result = Calculator.divNumbers(number1, number2);
                         System.out.println("Результат операции: " + result);
                         break;
                     }
@@ -34,9 +34,6 @@ public class Main {
                         break;
                     }
                 }
-                
-            
-
         } catch (NumberFormatException e) {
             throw new NumberFormatException("Вы ввели не число!");
         }

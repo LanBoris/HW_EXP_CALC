@@ -16,11 +16,11 @@ public class Calculator {
         return result;
     }
 
-    public static double divNumbers(double num1, double num2) {
+    public static double divNumbers(int num1, int num2) {
         if (num2 == 0) {
             throw new InvalidInputException("Деление на 0 недопустимо!");
         }
-        double resultDouble = num1 / num2;
+        double resultDouble = (double) num1 / (double) num2;
         return resultDouble;
     }
 }
