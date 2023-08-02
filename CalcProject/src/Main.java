@@ -5,34 +5,41 @@ public class Main {
         System.out.println("Добро пожаловать в калькулятор!");
         try {
                 while (true){
-                    int number1 = inputInt("Введите первое число: ");
-                    int number2 = inputInt("Введите второе число: ");
-                    String cmd = inputString("Выбирите операцию (+, -, *, /, ^): ");
-                    if (cmd.equals("+")) {
-                        int result = Calculator.sumNumbers(number1, number2);
-                        System.out.println("Результат операции: " + result);
-                        break;
+                    while(true){
+                        int number1 = inputInt("Введите первое число: ");
+                        int number2 = inputInt("Введите второе число: ");
+                        String cmd = inputString("Выбирите операцию (+, -, *, /, ^): ");
+                        if (cmd.equals("+")) {
+                            int result = Calculator.sumNumbers(number1, number2);
+                            System.out.println("Результат операции: " + result);
+                            break;
+                        }
+                        if (cmd.equals("-")) {
+                            int result = Calculator.diffNumbers(number1, number2);
+                            System.out.println("Результат операции: " + result);
+                            break;
+                        }
+                        if (cmd.equals("*")) {
+                            int result = Calculator.multiNumbers(number1, number2);
+                            System.out.println("Результат операции: " + result);
+                            break;
+                        }
+                        if (cmd.equals("/")) {
+                            double result = Calculator.divNumbers(number1, number2);
+                            System.out.println("Результат операции: " + result);
+                            break;
+                        }
+                        if (cmd.equals("^")){
+                            double result = PowerCalculator.calculatePower(number1, number2);
+                            System.out.println("Результат операции: " + result);
+                            break;
+                        }
                     }
-                    if (cmd.equals("-")) {
-                        int result = Calculator.diffNumbers(number1, number2);
-                        System.out.println("Результат операции: " + result);
-                        break;
+                    String cmd2 = inputString("Посчитаем еще? Y/N: ");
+                    if (cmd2.equals("Y")){
+                        continue;
                     }
-                    if (cmd.equals("*")) {
-                        int result = Calculator.multiNumbers(number1, number2);
-                        System.out.println("Результат операции: " + result);
-                        break;
-                    }
-                    if (cmd.equals("/")) {
-                        double result = Calculator.divNumbers(number1, number2);
-                        System.out.println("Результат операции: " + result);
-                        break;
-                    }
-                    if (cmd.equals("^")){
-                        double result = PowerCalculator.calculatePower(number1, number2);
-                        System.out.println("Результат операции: " + result);
-                        break;
-                    }
+                    break;
                 }
         } catch (NumberFormatException e) {
             throw new NumberFormatException("Вы ввели не число!");
